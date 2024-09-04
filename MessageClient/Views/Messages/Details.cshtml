@@ -1,0 +1,12 @@
+@{
+  ViewData["Title"] = $"{@Model.Username}'s Post";
+}
+
+<h4>@Model.Username - @Model.PostedOn</h4>
+<p>Board @Model.BoardId</p>
+
+<p>@Model.Content</p>
+
+<p>@Html.ActionLink("Edit details", "Edit", new { id = @Model.MessageId })</p>
+<p>@Html.ActionLink("Delete message", "Delete", new { id = @Model.MessageId })</p>
+<p>@Html.ActionLink("Return to all messages", "Index")</p>
