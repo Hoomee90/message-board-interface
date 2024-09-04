@@ -15,7 +15,7 @@ public class ApiHelper
 
   public static async Task<string> Get(int id)
   {
-    RestClient client = new("http://localhost:5000/");
+    RestClient client = new("http://localhost:413/");
     RestRequest request = new($"api/messages/{id}", Method.Get);
     RestResponse response = await client.GetAsync(request);
     return response.Content;
@@ -23,7 +23,7 @@ public class ApiHelper
 
   public static async void Post(string newMessage)
   {
-    RestClient client = new RestClient("http://localhost:5000/");
+    RestClient client = new RestClient("http://localhost:413/");
     RestRequest request = new RestRequest($"api/messages", Method.Post);
     request.AddHeader("Content-Type", "application/json");
     request.AddJsonBody(newMessage);
@@ -32,7 +32,7 @@ public class ApiHelper
 
   public static async void Put(int id, string newMessage)
   {
-    RestClient client = new("http://localhost:5000/");
+    RestClient client = new("http://localhost:413/");
     RestRequest request = new($"api/messages/{id}", Method.Put);
     request.AddHeader("Content-Type", "application/json");
     request.AddJsonBody(newMessage);
@@ -41,7 +41,7 @@ public class ApiHelper
 
   public static async void Delete(int id)
   {
-    RestClient client = new RestClient("http://localhost:5000/");
+    RestClient client = new RestClient("http://localhost:413/");
     RestRequest request = new RestRequest($"api/messages/{id}", Method.Delete);
     request.AddHeader("Content-Type", "application/json");
     await client.DeleteAsync(request);
