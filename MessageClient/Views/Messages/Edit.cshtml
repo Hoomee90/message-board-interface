@@ -6,6 +6,11 @@
 
 <h4>Edit message by @Model.Username</h4>
 
+@if (!ViewData.ModelState.IsValid)
+{
+  @Html.ValidationSummary("Please fix the following error(s) and then resubmit the form:")
+}
+
 @using (Html.BeginForm())
 {
   @Html.HiddenFor(model => model.MessageId)
